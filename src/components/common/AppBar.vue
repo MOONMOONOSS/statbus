@@ -9,8 +9,8 @@
     v-toolbar-title {{ appName }}
     v-spacer
     v-tooltip(
-      v-for="(data, i) in buttons"
-      :key="i"
+      v-for="(data) in buttons"
+      :key="data.icon"
       bottom
     )
       template(v-slot:activator="{ on }")
@@ -22,7 +22,17 @@
           v-icon(:left="$vuetify.breakpoint.mdAndUp") {{ data.icon }}
           | {{ $vuetify.breakpoint.mdAndUp ? data.text : '' }}
       span {{ data.text }}
-    v-btn(icon): v-icon fa-search
+    v-tooltip(
+      v-for="(data) in sidecons"
+      :key="data.icon"
+      bottom
+    )
+      template(v-slot:activator="{ on }")
+        v-btn(
+          v-on="on"
+          icon
+        ): v-icon {{ data.icon }}
+      span {{ data.text }}
 </template>
 
 <script>
@@ -52,6 +62,16 @@ export default {
       {
         icon: 'fa-globe',
         text: 'Extras',
+      },
+    ],
+    sidecons: [
+      {
+        icon: 'fa-search',
+        text: 'Search',
+      },
+      {
+        icon: 'fa-user-circle',
+        text: 'Account',
       },
     ],
   }),
