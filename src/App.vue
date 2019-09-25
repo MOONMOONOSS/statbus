@@ -1,25 +1,18 @@
 <template lang="pug">
   v-app
-    v-app-bar(app)
-      v-toolbar-title.headline.text-uppercase
-        span Vuetify
-        span.font-weight-light MATERIAL DESIGN
-      v-spacer
-      v-btn(
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      )
-        span.mr-2 Latest Release
-        v-icon fas fa-external-link-alt
+    AppBar
 
     v-content: router-view
 </template>
 
 <script>
+import AppBar from './components/common/AppBar.vue';
 
 export default {
   name: 'App',
+  components: {
+    AppBar,
+  },
   data: () => ({
     //
   }),
