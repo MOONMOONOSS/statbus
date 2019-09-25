@@ -13,5 +13,10 @@ export default new Router({
       name: 'home',
       component: Home,
     },
+    {
+      path: '/rounds',
+      name: 'round-overview',
+      component: () => import(/* webpackChunkName: "round-overview" */ './views/RoundOverview.vue'),
+    },
   ],
 });

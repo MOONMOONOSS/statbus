@@ -7,6 +7,7 @@
     v-app-bar-nav-icon.d-flex.d-sm-none
     v-toolbar-title {{ appName }}
     v-spacer
+    //- Buttons with text that show on md+
     v-tooltip(
       v-for="(data) in buttons"
       :key="data.icon"
@@ -17,10 +18,12 @@
           v-on="$vuetify.breakpoint.mdAndUp ? null : on"
           :icon="!$vuetify.breakpoint.mdAndUp"
           :text="$vuetify.breakpoint.mdAndUp"
+          :to="('route' in data) ? data.route : null"
         )
           v-icon(:left="$vuetify.breakpoint.mdAndUp") {{ data.icon }}
           | {{ $vuetify.breakpoint.mdAndUp ? data.text : '' }}
       span {{ data.text }}
+    //- Buttons that are always visible
     v-tooltip(
       v-for="(data) in sidecons"
       :key="data.icon"
@@ -45,6 +48,7 @@ export default {
       {
         icon: 'fa-chart-pie',
         text: 'Rounds',
+        route: 'rounds',
       },
       {
         icon: 'fa-skull',
