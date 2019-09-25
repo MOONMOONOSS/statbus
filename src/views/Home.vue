@@ -7,23 +7,22 @@
         v-divider.my-6.d-none.d-sm-block
 
       div(class='d-flex flex-wrap align-center \
-        justify-space-around mx-sm-n6 mx-xs-3 \
-        mt-xs-6 mx-md-auto my-md-auto'
+        mx-sm-n6 mx-xs-3 mt-xs-6 my-md-auto'
       )
-        v-card.mb-6.mx-3.flex-grow-1(
-          v-for="(data, i) in cards"
+        //- TODO: Make lg+ conditional layout
+        DashCard(
+          v-for="(card, i) in cards"
           :key="i"
-          hover
+          :card="card"
         )
-          v-container.px-6.py-10
-            .headline.font-weight-light {{ data.heading }}
-            .display-2.font-weight-light {{ data.number }}
-            .headline.font-weight-light {{ data.subText }}
 </template>
 
 <script>
+import DashCard from '../components/home/DashCard.vue';
+
 export default {
   components: {
+    DashCard,
   },
   data: () => ({
     cards: [
@@ -61,9 +60,6 @@ export default {
   @media (max-width 599px)
     margin-left 12px !important
     margin-right 12px !important
->>> .v-card
-  @media (max-width 599px)
-    min-width 100%
 // You can go right to hell demon query
 .container.fill-height
   @media (min-width 960px)
