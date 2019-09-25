@@ -10,7 +10,7 @@
         justify-space-around mx-sm-n6 mx-xs-3 \
         mt-xs-6 mx-md-auto my-md-auto'
       )
-        v-card.mb-6.mx-3(
+        v-card.mb-6.mx-3.flex-grow-1(
           v-for="(data, i) in cards"
           :key="i"
           hover
