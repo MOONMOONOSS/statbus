@@ -1,7 +1,6 @@
 <template lang="pug">
   v-app-bar(
     color="primary"
-    collapse-on-scroll=true
     app
     dark
   )

@@ -2,7 +2,7 @@
   v-app
     AppBar
 
-    v-content: router-view
+    v-content: v-container(fluid, fill-height): router-view
 </template>
 
 <script>
@@ -18,3 +18,8 @@ export default {
   }),
 };
 </script>
+
+<style lang="stylus">
+html
+  overflow-y auto !important
+</style>
