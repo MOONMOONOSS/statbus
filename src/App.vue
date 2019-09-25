@@ -22,4 +22,8 @@ export default {
 <style lang="stylus">
 html
   overflow-y auto !important
+// You can go right to hell demon query
+.container
+  @media (min-width 960px)
+    max-width unset
 </style>

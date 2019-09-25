@@ -60,8 +60,4 @@ export default {
   @media (max-width 599px)
     margin-left 12px !important
     margin-right 12px !important
-// You can go right to hell demon query
-.container.fill-height
-  @media (min-width 960px)
-    max-width unset
 </style>
