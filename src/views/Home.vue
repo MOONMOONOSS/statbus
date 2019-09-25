@@ -11,20 +11,44 @@
         mt-xs-6 mx-md-auto my-md-auto'
       )
         v-card.mb-6.mx-3(
-          v-for="n in 4"
-          :key="n"
+          v-for="(data, i) in cards"
+          :key="i"
           hover
         )
           v-container.px-6.py-10
-            .headline.font-weight-light Test
-            .display-2.font-weight-light 123
-            .headline.font-weight-light Total somethings
+            .headline.font-weight-light {{ data.heading }}
+            .display-2.font-weight-light {{ data.number }}
+            .headline.font-weight-light {{ data.subText }}
 </template>
 
 <script>
 export default {
   components: {
   },
+  data: () => ({
+    cards: [
+      {
+        heading: 'Cataloging',
+        number: '1,003',
+        subText: 'Total deaths',
+      },
+      {
+        heading: 'With data from',
+        number: '162',
+        subText: 'Total rounds',
+      },
+      {
+        heading: 'Gathered by over',
+        number: '101,700',
+        subText: 'Minutes of gameplay',
+      },
+      {
+        heading: 'Check out',
+        number: '10',
+        subText: 'Books in our library',
+      },
+    ],
+  }),
 };
 </script>
 
